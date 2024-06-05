@@ -1,4 +1,4 @@
-.map{
-    width: auto;/*가로*/
-    height: 100%;/*세로*/
+.mapcss{
+    width: 100%;/*가로*/
+    height: 95vh;/*세로*/
 }
