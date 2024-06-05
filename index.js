@@ -1,8 +1,8 @@
 var infowindow = new kakao.infowindow({zIndex:1});
 
-var ps = new kakao.maps.services.Places();
 
 function search(){
+    var ps = new kakao.maps.services.Places();
     var input = document.getElementById('keyword').value;
     ps.keywordSearch(input, placesSearchCB);
 }
