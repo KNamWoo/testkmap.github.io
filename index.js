@@ -1,5 +1,4 @@
-var infowindow = new kakao.infowindow({zIndex:1});
-
+var infowindow = new kakao.maps.Infowindow({zIndex:1});
 
 function search(){
     var ps = new kakao.maps.services.Places();
