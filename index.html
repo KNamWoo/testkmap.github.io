@@ -13,22 +13,23 @@
         <button type="submit" onclick="search()">검색하기</button>
     </div>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c17c63895c70f99c88660a9321a9409&autoload=false"></script>
-
     <div id="map" class="mapcss"></div>
     <script>
-        var container = document.getElementById('map');
-        var options = {
-            center: new kakao.maps.LatLng(37.4720, 126.6608),
-            level: 3
+        const script = document.createElement("script");
+        script.src = "http://dapi.kakao.com/v2/maps/sdk.js?appkey=2c17c63895c70f99c88660a9321a9409&autoload=false&libraries=clusterer,services&";
+        document.head.appendChild(script);
+        script.onload = () => {
+            kakao.maps.load(() => {
+                const node = document.getElementById('map'); // 지도를 표시할 div
+                const center = new kakao.maps.LatLng(37.4720, 126.6608);
+                const options = {
+                    center,
+                    level: 3
+                };
+                const map = new kakao.maps.Map(node, options);
+            });
         };
 
-        window.onload = function () {
-            kakao.maps.load(function() {
-                // v3가 모두 로드된 후, 이 콜백 함수가 실행됩니다.
-                var map = new kakao.maps.Map(node, options);
-            });
-        }
     </script>
 </body>
 </html>
