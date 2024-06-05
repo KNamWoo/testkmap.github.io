@@ -8,13 +8,17 @@
     <script src="./index.js"></script>
 </head>
 <body>
+    <input type = "text" id="address">
+    <input type="button" value="Send" onclick="getValueInText();">
+    
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c17c63895c70f99c88660a9321a9409"></script>
     <div id="map" class="mapcss"></div>
     <script>
         var container = document.getElementById('map');
         var options = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667),
-            level: 10
+            center: new kakao.maps.LatLng(37.3595704, 127.105399),
+            level: 10,
+            mapTypeControl: true
         };
 
         var map = new kakao.maps.Map(container, options);
