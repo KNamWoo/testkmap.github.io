@@ -1,4 +1,4 @@
-let infowindow = new kakao.maps.infowindow({zIndex:1});
+/*let infowindow = new kakao.maps.infowindow({zIndex:1});
 
 var container = document.getElementById('map');
 var options = {
@@ -38,4 +38,4 @@ function displayMarker(place){
         infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
         infowindow.open(map, marker);
     });
-}
+}*/
