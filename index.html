@@ -24,13 +24,13 @@
 
         let infowindow = new kakao.infowindow({zIndex:1});
         
-        let container = document.getElementById('map');
-        let options = {
+        var container = document.getElementById('map');
+        var options = {
             center: new kakao.maps.LatLng(37.4720, 126.6608),
             level: 3
         };
 
-        let map = new kakao.maps.Map(container, options);
+        var map = new kakao.maps.Map(container, options);
 
         let ps = new kakao.maps.services.Places();
 
