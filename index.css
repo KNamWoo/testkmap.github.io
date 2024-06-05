@@ -1,4 +1,4 @@
 .map{
-    width: 100%;/*가로*/
-    height: 1000px;/*세로*/
+    width: auto;/*가로*/
+    height: 100%;/*세로*/
 }
