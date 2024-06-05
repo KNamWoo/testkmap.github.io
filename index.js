@@ -1,4 +1,4 @@
-var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+/*var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 var ps = new kakao.maps.services.Places();
 
@@ -31,3 +31,4 @@ function displayMarker(place){
         infowindow.open(map, marker);
     });
 }
+*/
