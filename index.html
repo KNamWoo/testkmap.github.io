@@ -9,7 +9,23 @@
 </head>
 <body>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c17c63895c70f99c88660a9321a9409"></script>
-    <div id="map" class="mapcss"></div>
+    <div class="map_warp">
+        <div id="map" class="mapcss"></div>
+
+        <div id="menu_warp" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15">
+                        <button type="submit">검색하기</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>  
+    </div>
     <script>
         let container = document.getElementById('map');
         let options = {
