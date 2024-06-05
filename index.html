@@ -34,7 +34,7 @@
 
         var ps = new kakao.maps.services.Places();
 
-        /*function placesSearchCB(data, status, pagination){
+        function placesSearchCB(data, status, pagination){
             if(status === kakao.maps.services.Status.OK){
                 var bounds = new kakao.maps.LatLngBounds();
 
@@ -57,7 +57,7 @@
                 infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
                 infowindow.open(map, marker);
             });
-        }*/
+        }
     </script>
 </body>
 </html>
