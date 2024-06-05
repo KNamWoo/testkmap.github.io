@@ -18,11 +18,11 @@
     <div id="map" class="mapcss"></div>
     <script>
         function search(){
-            let input = document.getElementById('keyword').value;
+            var input = document.getElementById('keyword').value;
             ps.keywordSearch(input, placesSearchCB);
         }
 
-        let infowindow = new kakao.infowindow({zIndex:1});
+        var infowindow = new kakao.infowindow({zIndex:1});
         
         var container = document.getElementById('map');
             options = {
@@ -32,13 +32,13 @@
 
         var map = new kakao.maps.Map(container, options);
 
-        let ps = new kakao.maps.services.Places();
+        var ps = new kakao.maps.services.Places();
 
         function placesSearchCB(data, status, pagination){
             if(status === kakao.maps.services.Status.OK){
-                let bounds = new kakao.maps.LatLngBounds();
+                var bounds = new kakao.maps.LatLngBounds();
 
-                for(let i=0; i<data.length; i++){
+                for(var i=0; i<data.length; i++){
                     displayMarker(data[i]);
                     bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
                 }
@@ -48,7 +48,7 @@
         }
 
         function displayMarker(place){
-            let marker = new kakao.maps.Marker({
+            var marker = new kakao.maps.Marker({
                 map: map,
                 position: new kakao.maps.LatLng(place.y, place.x)
             });
