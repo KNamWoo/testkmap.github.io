@@ -26,6 +26,12 @@
         };
 
         var map = new naver.maps.Map(container, options);
+
+        $("#search_input").on("keydown", function(e){
+            if(e.keyCode === 13){//enter키
+                alert("엔터");
+            }
+        })
     </script>
 </body>
 </html>
