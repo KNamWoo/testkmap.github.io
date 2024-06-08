@@ -9,8 +9,8 @@
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/api/hello.py"
+        "dest": "/api/hello.py",
+        "status": 200
       }
     ]
   }
-  
