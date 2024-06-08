@@ -11,11 +11,14 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
-    <script src="./geocoding.py"></script>
-    <script src="./directions5.py"></script>
     <script>
         async function callPythonFunction() {
-            const response = await fetch('/api/hello');
+            const response = await fetch('/api/directions5');
+            const data = await response.json();
+            document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+        }
+        async function callPythonFunction() {
+            const response = await fetch('/api/geocoding');
             const data = await response.json();
             document.getElementById("output").innerText = JSON.stringify(data, null, 2);
         }
