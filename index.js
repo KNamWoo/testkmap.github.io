@@ -1,3 +1,5 @@
+const { spawn } = require('child_process');
+
 let search_arr = [];
 
 function placeSearchCB(data, status, pagination){
@@ -25,4 +27,22 @@ function placeSearchCB(data, status, pagination){
     }
 }
 
+const spawn = require('child_process').spawn;
+const direct = spawn('python', ['directions5.py']);
+const geoco = spawn('python', ['geocoding.py']);
 
+direct.stdout.on('data', function(data){
+    console.log(data.toString());
+});
+
+direct.stderr.on('data', function(data){
+    console.log(data.toString());
+});
+
+geoco.stdout.on('data', function(data){
+    console.log(data.toString());
+});
+
+geoco.stderr.on('data', function(data){
+    console.log(data.toString());
+});
