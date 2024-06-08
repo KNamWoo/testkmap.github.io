@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=kf1tb4xvjj"></script>
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
 </head>
 <body>
-    <div>
-        <t1>검색창</t1><input id="keyword" type="text" value="스타벅스" size="15">
-        <button type="submit" onclick="search()">검색하기</button>
+    <div id="search">
+        <input id="search_input" placeholder="주소 검색" />
+        <button id="search_button">검색</button>
     </div>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c17c63895c70f99c88660a9321a9409"></script>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fc54162f0f533365dbb853fd3e82aff3"></script>
 
     <div id="map" class="mapcss"></div>
     <script>
