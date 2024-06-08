@@ -16,9 +16,9 @@ function placeSearchCB(data, status, pagination){
         }else{
             search_arr.push(marker);
             let pre_marker = search_arr.splice(0, 1);//이전 검색된 마커 추출
-            pre_marker[0].setMap(null);//이전 마커 지우기
+            //pre_marker[0].setMap(null);//이전 마커 지우기
         }
-        map.setZoom(14, false);
+        //map.setZoom(14, false);
         map.panTo(latlng);
     }else{
         alert("결과 없음");
