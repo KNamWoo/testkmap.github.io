@@ -24,3 +24,5 @@ function placeSearchCB(data, status, pagination){
         alert("결과 없음");
     }
 }
+
+
