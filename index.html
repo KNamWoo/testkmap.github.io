@@ -19,6 +19,14 @@
     <div id="map" class="mapcss"></div>
 
     <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new naver.maps.LatLng(37.4720, 126.6608),
+            level: 3
+        };
+
+        var map = new naver.maps.Map(container, options);
+    
         export default{
             mounted(){
                 if(window.kakao && window.kakao.maps){
@@ -34,14 +42,6 @@
             
             methods:{
                 initMap(){
-                    var container = document.getElementById('map');
-                    var options = {
-                        center: new naver.maps.LatLng(37.4720, 126.6608),
-                        level: 3
-                    };
-
-                    var map = new naver.maps.Map(container, options);
-
                     let ps = new kakao.maps.services.Places();
 
                     $("#search_input").on("keydown", function(e){
