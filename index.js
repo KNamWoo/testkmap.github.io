@@ -1,5 +1,3 @@
-const { spawn } = require('child_process');
-
 let search_arr = [];
 
 function placeSearchCB(data, status, pagination){
