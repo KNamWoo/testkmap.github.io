@@ -1,3 +1,53 @@
+const Map = () => {
+    const [map, setMap] = useState(null);
+    const [pointObj, setPointObj] = useState({
+      startPoint: {marker: null, lat: null, lng: null},
+      endPoint: {marker: null, lat: null, lng: null}
+    });
+    
+    // 기존 useEffect는 유지합니다.
+     
+    // pointObj의 변경이 있을 때마다 출발지와 목적지의 marker를 map에 표시해줍니다.
+    useEffect(() => {
+      for (const point in pointObj) {
+        if (pointObj[point].marker) {
+          pointObj[point].marker.setMap(map);
+        }
+      }
+    }, [pointObj]);
+    
+     // 부드럽게 중심점을 이동시키는 메서드만 따로 빼보았습니다.
+    function setCenter({lat, lng}) {
+      const moveLatLon = new kakao.maps.LatLng(lat, lng);
+      map.panTo(moveLatLon);
+    }
+    
+    function setPoint({lat, lng}, pointType) {
+      setCenter({lat, lng});
+      let marker = new kakao.maps.Marker({position: new kakao.maps.LatLng(lat, lng)});
+       setPointObj(prev => {
+          if (pointObj[pointType].marker !== null) {
+            // 주소가 변경되었을 때 기존 marker를 제거합니다.
+             prev[pointType].marker.setMap(null);
+          }
+          return {...prev, [pointType]: {marker, lat, lng}};
+       });
+    }
+    return (
+      <>
+         <div id="map" style={{width: "450px", height: "450px"}}/>
+         <div style={{display: "flex", gap: "10px"}}>
+            <button onClick={() => setPoint({lat: 33.452613, lng: 126.570888}, 'startPoint')}>
+               출발지1 지정
+            </button>
+            <button onClick={() => setPoint({lat: 33.45058, lng: 126.574942}, 'endPoint')}>
+               목적지1 설정
+            </button>
+         </div>
+      </>
+    )
+}
+
 async function getCarDirection() {
     const REST_API_KEY = '791e26df301203af6b602a9ae1394744';
     // 호출방식의 URL을 입력합니다.
