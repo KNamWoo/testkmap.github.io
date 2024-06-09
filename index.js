@@ -19,8 +19,8 @@ let presentPosition;
 /////////////////지도의 중심을 현재 위치로 변경///////////////////////
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 5 // 지도의 확대 레벨 
+        center: new kakao.maps.LatLng(37.4720, 126.6608), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨 
     }; 
  
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -31,10 +31,10 @@ if (navigator.geolocation) {
     // GeoLocation을 이용해서 접속 위치를 얻어옵니다
     navigator.geolocation.getCurrentPosition(function(position) {
         
-        var lat = position.coords.latitude, // 위도
+        /*var lat = position.coords.latitude, // 위도
             lon = position.coords.longitude; // 경도
-        
-        var locPosition = new kakao.maps.LatLng(lat, lon) // geolocation으로 얻어온 좌표
+        */
+        var locPosition = new kakao.maps.LatLng(37.4720, 126.6608) //청운대 인천캠퍼스를 출발지로 지정합니다 // geolocation으로 얻어온 좌표
         presentPosition=locPosition;
  
         map.setCenter(locPosition);   
@@ -43,7 +43,7 @@ if (navigator.geolocation) {
     
 } else { // HTML5의 GeoLocation을 사용할 수 없을때 
     
-    var locPosition = new kakao.maps.LatLng(37.566826, 126.9786567)
+    var locPosition = new kakao.maps.LatLng(37.4720, 126.6608)
     alert('현재 위치를 찾을 수 없습니다!');
 }
  
